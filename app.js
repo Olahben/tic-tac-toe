@@ -3,3 +3,7 @@
 const gameBoard = (() => {
   const gameBoard = [];
 });
+
+const makePlayers = (name, selector) => {
+
+};
