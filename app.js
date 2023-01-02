@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 const gameBoard = (() => {
   const gameBoard = [];
-});
+})();
 
 const makePlayers = (name, selector) => {
 
@@ -10,4 +10,4 @@ const makePlayers = (name, selector) => {
 
 const displayController = (() => {
 
-});
+})();
