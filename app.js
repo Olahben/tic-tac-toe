@@ -4,7 +4,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 const gameBoard = (() => {
-  const gameBoardArr = ['X', 'O', 'X', 'X', 'O', 'O', 'X', 'O', 'X'];
+  const gameBoardArr = ['', '', '', '', '', '', '', '', ''];
 
   const _renderGameBoard = (() => {
     const gameBoardGrid = document.querySelector('#grid-container');
