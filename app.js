@@ -4,18 +4,15 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 
-let setCellIndex = 0;
-
 const gameBoard = (() => {
   const gameBoardArr = ['', '', '', '', '', '', '', '', ''];
 
   const _renderGameBoard = (() => {
     const gameBoardGrid = document.querySelector('#grid-container');
     for (let i = 0; i < 9; i++) {
-      // console.log(gameBoardGrid);
+      let setCellIndex = 0;
       const cell = document.createElement('div');
       cell.classList.add('cell');
-      cell.textContent = gameBoardArr[i];
       cell.index = setCellIndex;
       setCellIndex++;
       gameBoardGrid.appendChild(cell);
@@ -24,18 +21,23 @@ const gameBoard = (() => {
   return { gameBoardArr };
 })();
 
-
 const makePlayer = (name, selector) => {
   return { name, selector };
 };
 
 const displayController = (() => {
-  const cells = document.querySelectorAll('.cell')
+  let marker = 'X';
+  const cells = document.querySelectorAll('.cell');
   cells.forEach((cell) => {
     cell.addEventListener('click', () => {
-      gameBoard.gameBoardArr[cell.index] = 'X';
+      gameBoard.gameBoardArr[cell.index] = marker;
       // eslint-disable-next-line no-param-reassign
-      cell.textContent = 'X'
-    })
-  })
+      cell.textContent = marker;
+      if (marker === 'X') {
+        marker = 'O';
+      } else {
+        marker = 'X';
+      }
+    });
+  });
 })();
