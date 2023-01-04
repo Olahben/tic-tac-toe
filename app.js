@@ -33,7 +33,7 @@ const displayController = (() => {
   const cells = document.querySelectorAll('.cell')
   cells.forEach((cell) => {
     cell.addEventListener('click', () => {
-
+      gameBoard.gameBoardArr[cell.index] = 'X';
     })
   })
 })();
