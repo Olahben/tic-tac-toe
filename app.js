@@ -34,6 +34,8 @@ const displayController = (() => {
   cells.forEach((cell) => {
     cell.addEventListener('click', () => {
       gameBoard.gameBoardArr[cell.index] = 'X';
+      // eslint-disable-next-line no-param-reassign
+      cell.textContent = 'X'
     })
   })
 })();
