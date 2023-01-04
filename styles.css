@@ -3,3 +3,11 @@
     grid-template-columns: repeat(3, minmax(15vw, 100px));
     grid-template-rows: repeat(3, minmax(20vh, 40px));
 }
+.cell {
+    background-color: #F9F7F7;
+    display: grid;
+    place-content: center;
+    border: 1px solid #DBE2EF;
+    font-size: 320%;
+    
+}
