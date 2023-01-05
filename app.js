@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable arrow-body-style */
@@ -29,9 +30,8 @@ const displayController = (() => {
   let marker = 'X';
   const cells = document.querySelectorAll('.cell');
   const placeMarker = cells.forEach((cell) => {
-    // eslint-disable-next-line consistent-return
     cell.addEventListener('click', () => {
-      if(cell.textContent === 'X' || cell.textContent === 'O') {
+      if (cell.textContent === 'X' || cell.textContent === 'O') {
         return true;
       }
 
@@ -43,9 +43,162 @@ const displayController = (() => {
       } else {
         marker = 'X';
       }
+    });
 
+    const checkForWin = cells.forEach((cell) => {
+      cell.addEventListener('click', () => {
+        if (
+          gameBoard.gameBoardArr[0] === 'X' &&
+          gameBoard.gameBoardArr[1] === 'X' &&
+          gameBoard.gameBoardArr[2] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'O' &&
+          gameBoard.gameBoardArr[1] === 'O' &&
+          gameBoard.gameBoardArr[2] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[3] === 'X' &&
+          gameBoard.gameBoardArr[4] === 'X' &&
+          gameBoard.gameBoardArr[5] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[3] === 'O' &&
+          gameBoard.gameBoardArr[4] === 'O' &&
+          gameBoard.gameBoardArr[5] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[6] === 'X' &&
+          gameBoard.gameBoardArr[7] === 'X' &&
+          gameBoard.gameBoardArr[8] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[6] === 'O' &&
+          gameBoard.gameBoardArr[7] === 'O' &&
+          gameBoard.gameBoardArr[8] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[1] === 'X' &&
+          gameBoard.gameBoardArr[4] === 'X' &&
+          gameBoard.gameBoardArr[7] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[1] === 'O' &&
+          gameBoard.gameBoardArr[4] === 'O' &&
+          gameBoard.gameBoardArr[7] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'X' &&
+          gameBoard.gameBoardArr[3] === 'X' &&
+          gameBoard.gameBoardArr[6] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'O' &&
+          gameBoard.gameBoardArr[3] === 'O' &&
+          gameBoard.gameBoardArr[6] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[2] === 'X' &&
+          gameBoard.gameBoardArr[5] === 'X' &&
+          gameBoard.gameBoardArr[8] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[2] === 'O' &&
+          gameBoard.gameBoardArr[5] === 'O' &&
+          gameBoard.gameBoardArr[8] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'X' &&
+          gameBoard.gameBoardArr[4] === 'X' &&
+          gameBoard.gameBoardArr[8] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'O' &&
+          gameBoard.gameBoardArr[4] === 'O' &&
+          gameBoard.gameBoardArr[8] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[2] === 'X' &&
+          gameBoard.gameBoardArr[4] === 'X' &&
+          gameBoard.gameBoardArr[6] === 'X'
+        ) {
+          console.log('X WINS');
+          return 'X WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[2] === 'O' &&
+          gameBoard.gameBoardArr[4] === 'O' &&
+          gameBoard.gameBoardArr[6] === 'O'
+        ) {
+          console.log('O WINS');
+          return 'O WINS';
+        }
+        if (
+          gameBoard.gameBoardArr[0] === 'X' ||
+          gameBoard.gameBoardArr[0] === 'O' &&
+          gameBoard.gameBoardArr[1] === 'X' ||
+          gameBoard.gameBoardArr[1] === 'O' &&
+          gameBoard.gameBoardArr[2] === 'X' ||
+          gameBoard.gameBoardArr[2] === 'O' &&
+          gameBoard.gameBoardArr[3] === 'X' ||
+          gameBoard.gameBoardArr[3] === 'O' &&
+          gameBoard.gameBoardArr[4] === 'X' ||
+          gameBoard.gameBoardArr[4] === 'O' &&
+          gameBoard.gameBoardArr[5] === 'X' ||
+          gameBoard.gameBoardArr[5] === 'O' &&
+          gameBoard.gameBoardArr[6] === 'X' ||
+          gameBoard.gameBoardArr[6] === 'O' &&
+          gameBoard.gameBoardArr[7] === 'X' ||
+          gameBoard.gameBoardArr[7] === 'O' &&
+          gameBoard.gameBoardArr[8] === 'X' ||
+          gameBoard.gameBoardArr[8] === 'O'
+        ) {
+          console.log('TIE')
+          return 'TIE';
+        }
+      });
     });
   });
-
-
 })();
