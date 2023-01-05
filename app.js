@@ -6,11 +6,11 @@
 
 const gameBoard = (() => {
   const gameBoardArr = ['', '', '', '', '', '', '', '', ''];
+  let setCellIndex = 0;
 
   const _renderGameBoard = (() => {
     const gameBoardGrid = document.querySelector('#grid-container');
     for (let i = 0; i < 9; i++) {
-      let setCellIndex = 0;
       const cell = document.createElement('div');
       cell.classList.add('cell');
       cell.index = setCellIndex;
@@ -28,8 +28,13 @@ const makePlayer = (name, selector) => {
 const displayController = (() => {
   let marker = 'X';
   const cells = document.querySelectorAll('.cell');
-  cells.forEach((cell) => {
+  const placeMarker = cells.forEach((cell) => {
+    // eslint-disable-next-line consistent-return
     cell.addEventListener('click', () => {
+      if(cell.textContent === 'X' || cell.textContent === 'O') {
+        return true;
+      }
+
       gameBoard.gameBoardArr[cell.index] = marker;
       // eslint-disable-next-line no-param-reassign
       cell.textContent = marker;
@@ -38,6 +43,9 @@ const displayController = (() => {
       } else {
         marker = 'X';
       }
+
     });
   });
+
+
 })();
