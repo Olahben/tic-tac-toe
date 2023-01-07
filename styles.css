@@ -11,6 +11,7 @@
     place-content: center;
     border: 1px solid #DBE2EF;
     font-size: 320%;
+    font-family: 'Rowdies';
     
 }
 
@@ -35,5 +36,11 @@
     border-radius: 7px;
     margin-top: 15%;
     margin-bottom: 10%;
+    font-family: 'Rowdies';
+    
+}
+
+.result {
+    font-family: 'Rowdies';
     
 }
