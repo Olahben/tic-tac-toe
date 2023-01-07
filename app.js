@@ -201,4 +201,8 @@ const displayController = (() => {
       }
     });
   });
+  
+  const makeResultModal = result => {
+    
+  }
 })();
