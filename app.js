@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable consistent-return */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-underscore-dangle */
@@ -19,7 +20,7 @@ const gameBoard = (() => {
       gameBoardGrid.appendChild(cell);
     }
   })();
-  return { gameBoardArr };
+  return { gameBoardArr, setCellIndex };
 })();
 
 const makePlayer = (name, selector) => {
@@ -48,6 +49,16 @@ const displayController = (() => {
       }
     });
   });
+
+  const resetGame = () => {
+    gameBoard.gameBoardArr = ['', '', '', '', '', '', '', '', ''];
+    gameBoard.setCellIndex = 0;
+    marker = 'X';
+
+    const removeMarkers = document.querySelectorAll('.cell').forEach((cell) => {
+      cell.textContent = '';
+    });
+  };
 
   const makeResultModal = (result) => {
     modal.style.display = 'block';
@@ -198,6 +209,6 @@ const displayController = (() => {
   const closeModal = closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
 
-    // Call function that resets the game.
+    resetGame();
   });
 })();
