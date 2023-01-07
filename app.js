@@ -63,11 +63,32 @@ const displayController = (() => {
   const makeResultModal = (result) => {
     modal.style.display = 'block';
 
-    modalText.textContent = `${result} Won! Congrats to you!`;
+    modalText.textContent = `${result}! Congrats to everyone!`;
   };
 
   const checkForWin = cells.forEach((cell) => {
     cell.addEventListener('click', () => {
+      if (
+        (gameBoard.gameBoardArr[0] === 'X' ||
+          gameBoard.gameBoardArr[0] === 'O') &&
+        (gameBoard.gameBoardArr[1] === 'X' ||
+          gameBoard.gameBoardArr[1] === 'O') &&
+        (gameBoard.gameBoardArr[2] === 'X' ||
+          gameBoard.gameBoardArr[2] === 'O') &&
+        (gameBoard.gameBoardArr[3] === 'X' ||
+          gameBoard.gameBoardArr[3] === 'O') &&
+        (gameBoard.gameBoardArr[4] === 'X' ||
+          gameBoard.gameBoardArr[4] === 'O') &&
+        (gameBoard.gameBoardArr[5] === 'X' ||
+          gameBoard.gameBoardArr[5] === 'O') &&
+        (gameBoard.gameBoardArr[6] === 'X' ||
+          gameBoard.gameBoardArr[6] === 'O') &&
+        (gameBoard.gameBoardArr[7] === 'X' ||
+          gameBoard.gameBoardArr[7] === 'O') &&
+        (gameBoard.gameBoardArr[8] === 'X' || gameBoard.gameBoardArr[8] === 'O')
+      ) {
+        makeResultModal('TIE');
+      }
       if (
         gameBoard.gameBoardArr[0] === 'X' &&
         gameBoard.gameBoardArr[1] === 'X' &&
@@ -179,27 +200,6 @@ const displayController = (() => {
         gameBoard.gameBoardArr[6] === 'O'
       ) {
         makeResultModal('O');
-      }
-      if (
-        (gameBoard.gameBoardArr[0] === 'X' ||
-          gameBoard.gameBoardArr[0] === 'O') &&
-        (gameBoard.gameBoardArr[1] === 'X' ||
-          gameBoard.gameBoardArr[1] === 'O') &&
-        (gameBoard.gameBoardArr[2] === 'X' ||
-          gameBoard.gameBoardArr[2] === 'O') &&
-        (gameBoard.gameBoardArr[3] === 'X' ||
-          gameBoard.gameBoardArr[3] === 'O') &&
-        (gameBoard.gameBoardArr[4] === 'X' ||
-          gameBoard.gameBoardArr[4] === 'O') &&
-        (gameBoard.gameBoardArr[5] === 'X' ||
-          gameBoard.gameBoardArr[5] === 'O') &&
-        (gameBoard.gameBoardArr[6] === 'X' ||
-          gameBoard.gameBoardArr[6] === 'O') &&
-        (gameBoard.gameBoardArr[7] === 'X' ||
-          gameBoard.gameBoardArr[7] === 'O') &&
-        (gameBoard.gameBoardArr[8] === 'X' || gameBoard.gameBoardArr[8] === 'O')
-      ) {
-        makeResultModal('TIE');
       }
     });
   });
