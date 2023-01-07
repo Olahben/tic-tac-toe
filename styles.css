@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
 #grid-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(15vw, 100px));
