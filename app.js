@@ -28,7 +28,7 @@ const makePlayer = (name, selector) => {
 
 const displayController = (() => {
   const modal = document.getElementById('myModal');
-  const closeModal = document.querySelector('.close');
+  const closeModalBtn = document.querySelector('.close');
   const modalText = document.querySelector('.result');
   let marker = 'X';
   const cells = document.querySelectorAll('.cell');
@@ -210,4 +210,10 @@ const displayController = (() => {
 
     modalText.textContent = `${result} Won! Congrats to you!`;
   };
+
+  const closeModal = closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+
+    // Call function that resets the game.
+  });
 })();
