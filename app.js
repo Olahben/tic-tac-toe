@@ -29,6 +29,7 @@ const makePlayer = (name, selector) => {
 const displayController = (() => {
   const modal = document.getElementById('myModal');
   const closeModal = document.querySelector('.close');
+  const modalText = document.querySelector('.result');
   let marker = 'X';
   const cells = document.querySelectorAll('.cell');
   const placeMarker = cells.forEach((cell) => {
@@ -204,5 +205,9 @@ const displayController = (() => {
     });
   });
 
-  const makeResultModal = (result) => {};
+  const makeResultModal = (result) => {
+    modal.style.display = 'block';
+
+    modalText.textContent = `${result} Won! Congrats to you!`;
+  };
 })();
