@@ -6,6 +6,9 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 
+const playerForm = document.querySelector('#form');
+const playerFormSubmitBtn = document.querySelector('.submit');
+
 const gameBoard = (() => {
   const gameBoardArr = ['', '', '', '', '', '', '', '', ''];
   let setCellIndex = 0;
@@ -33,6 +36,7 @@ const displayController = (() => {
   const modalText = document.querySelector('.result');
   let marker = 'X';
   const cells = document.querySelectorAll('.cell');
+
   const placeMarker = cells.forEach((cell) => {
     cell.addEventListener('click', () => {
       if (cell.textContent === 'X' || cell.textContent === 'O') {
@@ -63,7 +67,7 @@ const displayController = (() => {
   const makeResultModal = (result) => {
     modal.style.display = 'block';
 
-    modalText.textContent = `${result}! Congrats to everyone!`;
+    modalText.textContent = `Congrats ${result}, you are the winner!`;
   };
 
   const checkForWin = cells.forEach((cell) => {
@@ -209,4 +213,17 @@ const displayController = (() => {
 
     resetGame();
   });
+
+  const openPlayerNameForm = (() => {
+    playerForm.style.display = 'block';
+    let XName;
+    let OName;
+
+    const getPlayerNames = playerFormSubmitBtn.addEventListener('click', () => {
+      XName = document.querySelector('#X-name').value;
+      OName = document.querySelector('#O-name').value;
+      
+      playerForm.style.display = 'none';
+    });
+  })();
 })();
