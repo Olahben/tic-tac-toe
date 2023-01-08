@@ -31,6 +31,8 @@ const makePlayer = (name, selector) => {
 };
 
 const displayController = (() => {
+  let XName;
+  let OName;
   const modal = document.getElementById('myModal');
   const closeModalBtn = document.querySelector('.close');
   const modalText = document.querySelector('.result');
@@ -64,11 +66,28 @@ const displayController = (() => {
     });
   };
 
-  const makeResultModal = (result) => {
+  const makeResultModal = (result, playerX, playerO) => {
     modal.style.display = 'block';
 
-    modalText.textContent = `Congrats ${result}, you are the winner!`;
+    if (result === 'X') {
+      modal.textContent = `Congrats ${playerX}!`;
+    }
+    if (result === 'O') {
+      modal.textContent = `Congrats ${playerO}!`;
+    }
+    if (result === 'TIE') {
+      modal.textContent = 'It is a tie';
+    }
+
+    // modalText.textContent = `Congrats ${result}, you are the winner!`;
   };
+
+  const playerNames = playerFormSubmitBtn.addEventListener('click', () => {
+    XName = document.querySelector('#X-name').value;
+    OName = document.querySelector('#O-name').value;
+
+    playerForm.style.display = 'none';
+  });
 
   const checkForWin = cells.forEach((cell) => {
     cell.addEventListener('click', () => {
@@ -91,119 +110,119 @@ const displayController = (() => {
           gameBoard.gameBoardArr[7] === 'O') &&
         (gameBoard.gameBoardArr[8] === 'X' || gameBoard.gameBoardArr[8] === 'O')
       ) {
-        makeResultModal('TIE');
+        makeResultModal('TIE', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'X' &&
         gameBoard.gameBoardArr[1] === 'X' &&
         gameBoard.gameBoardArr[2] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'O' &&
         gameBoard.gameBoardArr[1] === 'O' &&
         gameBoard.gameBoardArr[2] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[3] === 'X' &&
         gameBoard.gameBoardArr[4] === 'X' &&
         gameBoard.gameBoardArr[5] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[3] === 'O' &&
         gameBoard.gameBoardArr[4] === 'O' &&
         gameBoard.gameBoardArr[5] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[6] === 'X' &&
         gameBoard.gameBoardArr[7] === 'X' &&
         gameBoard.gameBoardArr[8] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[6] === 'O' &&
         gameBoard.gameBoardArr[7] === 'O' &&
         gameBoard.gameBoardArr[8] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[1] === 'X' &&
         gameBoard.gameBoardArr[4] === 'X' &&
         gameBoard.gameBoardArr[7] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[1] === 'O' &&
         gameBoard.gameBoardArr[4] === 'O' &&
         gameBoard.gameBoardArr[7] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'X' &&
         gameBoard.gameBoardArr[3] === 'X' &&
         gameBoard.gameBoardArr[6] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'O' &&
         gameBoard.gameBoardArr[3] === 'O' &&
         gameBoard.gameBoardArr[6] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[2] === 'X' &&
         gameBoard.gameBoardArr[5] === 'X' &&
         gameBoard.gameBoardArr[8] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[2] === 'O' &&
         gameBoard.gameBoardArr[5] === 'O' &&
         gameBoard.gameBoardArr[8] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'X' &&
         gameBoard.gameBoardArr[4] === 'X' &&
         gameBoard.gameBoardArr[8] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[0] === 'O' &&
         gameBoard.gameBoardArr[4] === 'O' &&
         gameBoard.gameBoardArr[8] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[2] === 'X' &&
         gameBoard.gameBoardArr[4] === 'X' &&
         gameBoard.gameBoardArr[6] === 'X'
       ) {
-        makeResultModal('X');
+        makeResultModal('X', XName, OName);
       }
       if (
         gameBoard.gameBoardArr[2] === 'O' &&
         gameBoard.gameBoardArr[4] === 'O' &&
         gameBoard.gameBoardArr[6] === 'O'
       ) {
-        makeResultModal('O');
+        makeResultModal('O', XName, OName);
       }
     });
   });
@@ -216,14 +235,5 @@ const displayController = (() => {
 
   const openPlayerNameForm = (() => {
     playerForm.style.display = 'block';
-    let XName;
-    let OName;
-
-    const getPlayerNames = playerFormSubmitBtn.addEventListener('click', () => {
-      XName = document.querySelector('#X-name').value;
-      OName = document.querySelector('#O-name').value;
-      
-      playerForm.style.display = 'none';
-    });
   })();
 })();
