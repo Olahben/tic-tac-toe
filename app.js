@@ -232,4 +232,9 @@ const displayController = (() => {
 
     resetGame();
   });
+
+  document.querySelector('#reset').addEventListener('click', () => {
+    resetGame();
+    // Reset the game when the reset button is clicked.
+  });
 })();
