@@ -65,3 +65,9 @@
     background-color: #DBE2EF; 
     opacity: 0.75;
 }
+
+legend {
+    font-size: 300%;
+    font-family: 'Rowdies';
+    margin-bottom: 20%;
+}
