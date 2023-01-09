@@ -106,3 +106,16 @@ input {
     font-size: 150%;
     color: white;
 }
+
+#reset {
+    margin-bottom: 1%;
+    border: 0px solid white;
+    border-radius: 8px;
+    background-color: #112D4E;
+    width: 9%;
+    height: 4%;
+
+    font-family: 'Rowdies';
+    font-size: 150%;
+    color: white;
+}
