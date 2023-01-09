@@ -232,8 +232,4 @@ const displayController = (() => {
 
     resetGame();
   });
-
-  const openPlayerNameForm = (() => {
-    playerForm.style.display = 'block';
-  })();
 })();
