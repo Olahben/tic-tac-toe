@@ -67,7 +67,7 @@
 legend {
   font-size: 300%;
   font-family: 'Rowdies';
-  margin-bottom: 20%;
+  margin-bottom: 10%;
 }
 
 label {
@@ -82,4 +82,18 @@ input {
   font-size: 120%;
   font-family: 'Rowdies';
   border-radius: 6px;
+}
+
+.submit {
+    display: block;
+    margin-top: 3%;
+    border: 0px solid white;
+    border-radius: 8px;
+    background-color: #112D4E;
+    width: 12%;
+    height: 4%;
+
+    font-family: 'Rowdies';
+    font-size: 150%;
+    color: white;
 }
