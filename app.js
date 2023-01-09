@@ -70,13 +70,13 @@ const displayController = (() => {
     modal.style.display = 'block';
 
     if (result === 'X') {
-      modal.textContent = `Congrats ${playerX}!`;
+      modalText.textContent = `Congrats ${playerX}!`;
     }
     if (result === 'O') {
-      modal.textContent = `Congrats ${playerO}!`;
+      modalText.textContent = `Congrats ${playerO}!`;
     }
     if (result === 'TIE') {
-      modal.textContent = 'It is a tie';
+      modalText.textContent = 'It is a tie';
     }
 
     // modalText.textContent = `Congrats ${result}, you are the winner!`;
